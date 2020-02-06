@@ -1,0 +1,36 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+  background-color: cornsilk;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: blanchedalmond;
+  min-width: 120px;
+  padding: 16px 12px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  border-radius: 25px;
+}
+
+body {
+  background-color:  #83c26b;
+  font-size: 24px;
+  color: rgba(40, 43, 75, 0.719);
+  text-align: center;
+}
+
+div {
+  padding: 15px;
+  border: 1px;
+}
+
+p {
+  display: block;
+}
+
+
