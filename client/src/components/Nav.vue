@@ -1,47 +1,69 @@
 <template>
 <nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
-      <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
-    </a>
-
-    <a :class="{ 'is-active':isOpen }" @click="isOpen = !isOpen" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" >
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
 
   <div :class="{ 'is-active':isOpen }" class="navbar-menu">
+
     <div class="navbar-start">
 
-
       <router-link to="/" class="navbar-item" active-class="is-current" exact>Home</router-link>
-      <router-link to="/about" class="navbar-item" active-class="is-current">About</router-link>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          About
+        </a>
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            About Us
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Community
+          </a>
+        </div>
+      </div>
      
 
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
-          More
+          Track
         </a>
 
         <div class="navbar-dropdown">
           <a class="navbar-item">
-            About
+            Activity
           </a>
+         <hr class="navbar-divider">
           <a class="navbar-item">
-            Jobs
-          </a>
-          <a class="navbar-item">
-            Contact
+            Log
           </a>
           <hr class="navbar-divider">
           <a class="navbar-item">
-            Report an issue
+            Share
           </a>
+          <hr class="navbar-divider">
         </div>
       </div>
-    </div>
+    
+          <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          User Support
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            Call
+          </a>
+         <hr class="navbar-divider">
+          <a class="navbar-item">
+            Chat
+          </a>
+          <hr class="navbar-divider">
+          <a class="navbar-item">
+            Email
+          </a>
+          <hr class="navbar-divider">
+        </div>
+      </div>
+</div>
 
     <div class="navbar-end">
       <div class="navbar-item">
@@ -68,6 +90,7 @@ export default {
 </script>
 
 <style>
+
   .is-current {
     font-weight: bold;
     color: blueviolet

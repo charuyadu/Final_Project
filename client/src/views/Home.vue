@@ -1,4 +1,5 @@
 <template>
+<body>
   <section class="container">
     <div class="hero">
         <h1 class="title">
@@ -7,4 +8,11 @@
     </div>
     
   </section>
+  </body>
 </template>
+
+<style lang="scss">
+  body { background-color:  #a88ccc;
+}
+  
+</style>
