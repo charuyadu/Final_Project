@@ -2,7 +2,6 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 
-import About from '../views/About.vue'
 import AboutUs from '../views/AboutUs.vue'
 import Community from '../views/Community.vue'
 
@@ -18,24 +17,24 @@ import Email from '../views/Email.vue'
 
 import Login from '../views/Login.vue'
 import SignUp from '../views/SignUp.vue'
+import { CurrentUser } from '../models/Users';
 
 Vue.use(VueRouter)
 
 const routes = [
   { path: '/', name: 'Home', component: Home },
-  { path: '/', name: 'About', component: About },
-  { path: '/', name: 'AboutUs', component: AboutUs },
-  { path: '/', name: 'Community', component: Community },
-  { path: '/', name: 'Track', component: Track },
-  { path: '/', name: 'Activity', component: Activity },
-  { path: '/', name: 'Log', component: Log },
-  { path: '/', name: 'Share', component: Share },
-  { path: '/', name: 'UserSupport', component: UserSupport },
-  { path: '/', name: 'Call', component: Call },
-  { path: '/', name: 'Chat', component: Chat },
-  { path: '/', name: 'Email', component: Email },
-  { path: '/', name: 'Login', component: Login },
-  { path: '/', name: 'SignUp', component: SignUp },
+  { path: '/AboutUs', name: 'AboutUs', component: AboutUs },
+  { path: '/Community', name: 'Community', component: Community },
+  { path: '/Track', name: 'Track', component: Track},
+  { path: '/Activity', name: 'Activity', component: Activity, meta: { isSecret: true } },
+  { path: '/Log', name: 'Log', component: Log },
+  { path: '/Share', name: 'Share', component: Share },
+  { path: '/UserSupport', name: 'UserSupport', component: UserSupport },
+  { path: '/Call', name: 'Call', component: Call },
+  { path: '/Chat', name: 'Chat', component: Chat },
+  { path: '/Email', name: 'Email', component: Email },
+  { path: '/Login', name: 'Login', component: Login },
+  { path: '/SignUp', name: 'SignUp', component: SignUp },
 
   {
     path: '/about',
@@ -52,5 +51,10 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
+
+router.beforeEach((to, from, next) => {
+  if(to.meta.isSecret && !CurrentUser) next('/Login');
+  else next();
+});
 
 export default router

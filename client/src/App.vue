@@ -17,8 +17,9 @@ export default {
 }
 </script>
 
-<style lang="scss">
-#app {
-  background-color:  #a88ccc;
-}
+<style scoped>
+body, html {
+    font-weight: bold;
+    color: #08b6ad;
+  }
 </style>
