@@ -10,7 +10,7 @@
             <div class="column">
               <h2 class="app is-size-3 has-text-centered "> <b><i>Email Us!</i></b> </h2>
               <br>
-              <p>Send us an email with your concerns and we would provide a prompt response. <a>Click here.</a> 
+              <p>Send us an email with your concerns and we would provide a prompt response. <a>support@stayfit.com</a> 
               </p>
             </div>
           </div>

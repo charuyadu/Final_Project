@@ -10,8 +10,9 @@
             <div class="column">
               <h2 class="app is-size-3 has-text-centered "> Giving back to Community </h2>
               <br>
-              <p>StayFit is focussed on supporting the community by sharing more information about health issues 
-                  and encouraging people to take initiatives towards leading a healthy life.
+              <p>StayFit is focused on supporting the community by sharing more information about health issues 
+                  and encouraging people to take initiatives towards leading a healthy life. We organize health drives and events 
+                  to encourage people towards healthy living. For more info on our work please visit the website often and stay tuned.
               </p>
             </div>
           </div>

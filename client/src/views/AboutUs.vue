@@ -10,8 +10,10 @@
             <div class="column">
               <h2 class="app is-size-3 has-text-centered "> About Stayfit </h2>
               <br>
-              <p>StayFit is for the specific demographic that is aware about proper healthcare, which requires
+              <p>StayFit goal is to target on entire demography and make people aware about proper healthcare, which requires
                 exercise as well a healthy diet regime. Our mantra is <i><b>Stay Fit! Stay Healthy!</b></i>
+              <br> <br>
+                We believe that everyone can achieve the perfect health by proper exercise and good diet. 
               </p>
             </div>
           </div>

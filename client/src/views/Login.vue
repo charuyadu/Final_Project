@@ -41,10 +41,10 @@ export default {
         }
     },
     methods: {
-        login(){
+        async login(){
             try {
-                Login(this.email, this.password);
-                this.$router.push('/Activity');
+                await Login(this.email, this.password);
+                this.$router.push('/Run');
             } catch (error) {
                 this.error = error;
             }
