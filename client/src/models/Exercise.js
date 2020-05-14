@@ -13,6 +13,10 @@ export default{
         .catch(err=> console.warn(err));
     },
     
+    async getValues(value){
+        return myFetch(`/exercise/getValues?term=${value}`)
+    },
+
     async add(value){
         await myFetch('/exercise/add',{value})
     },

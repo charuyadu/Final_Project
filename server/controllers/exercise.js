@@ -17,6 +17,8 @@ router
         exercise.deleteExercise(req.userId);
         res.send({ success: true })
     })
-    .get('/exercise/getValues', (req, res)=> res.send(req.body.exercise.exercise))
+    .get('/exercise/getValues', (req, res)=> {
+        res.send(exercise.exercise.filter(x=> x.includes(req.query.value)))
+    })
 
 module.exports = router;
