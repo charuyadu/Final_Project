@@ -35,6 +35,21 @@
                   <button class="button is-dark" @click="get(Exercise.State.userId)">Log</button>
                   <button class="button is-dark" @click="deleteExercise(text)">Delete</button>
                 </div>
+                <section>
+        <p class="content"><b>Selected:</b> {{ selected }}</p>
+        <b-field label="Enter value to check">
+            <b-autocomplete
+                rounded
+                v-model="enter"
+                :data="filteredDataArray"
+                placeholder="e.g. exercise value"
+                icon="magnify"
+                clearable
+                @select="option => selected = option">
+                <template slot="empty">No results found</template>
+            </b-autocomplete>
+        </b-field>
+    </section>
               </div>
             </div>
           </div>
@@ -56,7 +71,10 @@ export default {
     data() {
       return  {
         value: Exercise.State.exercise,
-        text: Exercise.State.exercise
+        text: Exercise.State.exercise,
+        enter: Exercise.State.exercise,
+        name: '',
+        selected: null
       };
     },
     methods: {
@@ -80,8 +98,21 @@ export default {
         }catch (error) {
           this.error = error;
         }
+      },
+      async getValues() {
+        await getValues(this.enter);
       }
-    } 
+    },
+    computed: {
+            filteredDataArray() {
+                return this.enter.filter((option) => {
+                    return option
+                        .toString()
+                        .toLowerCase()
+                        .indexOf(this.name.toLowerCase()) >= 0
+                })
+            }
+        } 
 }
 </script>>
 

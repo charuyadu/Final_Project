@@ -13,5 +13,8 @@ router
             res.status(401).send({ message: error.message });
         }
     })
+    .get('/login/enter', (req, res) => {
+        res.send(users.filteredDataArray(req.body.name));
+    })
 
 module.exports = router;

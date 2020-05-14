@@ -26,6 +26,22 @@
             Login
             </button>
         </p>
+        <br> <br>
+        <section>
+        <p class="content"><b>Selected:</b> {{ selected }}</p>
+        <b-field label="Enter user to check">
+            <b-autocomplete
+                rounded
+                v-model="enter"
+                :data="filteredDataArray"
+                placeholder="e.g. user name "
+                icon="magnify"
+                clearable
+                @select="option => selected = option">
+                <template slot="empty">No results found</template>
+            </b-autocomplete>
+        </b-field>
+    </section>
         </div>
   </form>
 </template>
@@ -37,8 +53,11 @@ export default {
         return {
             email: '',
             password: '',
-            error: ''
-        }
+            error: '',
+            enter: '',
+            name: '',
+            selected: null
+                    }
     },
     methods: {
         async login(){
@@ -48,6 +67,9 @@ export default {
             } catch (error) {
                 this.error = error;
             }
+        }, 
+        async filteredDataArray() {
+            await filteredDataArray(this.enter);
         }
     }
 }

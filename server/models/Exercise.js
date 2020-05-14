@@ -1,7 +1,7 @@
 
-const exercise = [];
+const exercise = ['34','15'];
 
-const exerciseLog = [];
+const exerciseLog = [ { Name: 'Charu', Log: '14'}];
 
    function get() {
     return exercise;
@@ -27,6 +27,11 @@ const exerciseLog = [];
         return exerciseLog.push({ Name: users.Name, Log: data })
     }
 
+    function getValues(enter){
+        const result = exercise.find(x => x.enter == enter);
+        return result;
+    }
+
 module.exports = {
-    exercise, exerciseLog, get, add, deleteExercise, getUserData
+    exercise, exerciseLog, get, add, deleteExercise, getUserData, getValues
 }

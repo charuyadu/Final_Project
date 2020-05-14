@@ -2,7 +2,7 @@
 const water = [];
 let count = 0;
 
-const waterLog = [{ Name: Charu, Log: ['10', '15', '12'] }];
+const waterLog = [{ Name: 'Charu', Log: ['10', '15', '12'] }];
 
    function get() {
     return water;

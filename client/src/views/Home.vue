@@ -36,9 +36,10 @@
       <router-link to="/Email" class="navbar-item has-text-dark">Email</router-link>
     </div>  
  </nav>
-</div>
+
 
   
+    </div>
 </template>
 
 

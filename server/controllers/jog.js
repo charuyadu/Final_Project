@@ -10,8 +10,8 @@ const router = express.Router();
 
 router
 
-    .get('/jog', (req, res)=> res.send(run))
-    .post('/jog/add', (req, res) => res.send(run.add(req.body.jog)))
+    .get('/jog', (req, res)=> res.send(jog))
+    .post('/jog/add', (req, res) => res.send(jog.add(req.body.jog)))
     .post('/jog/getUserData', (req, res)=> res.send(jog.getUserData(req.userId)) )
     .post('/jog/delete', (req, res) => {
         jog.deleteJog(req.userId);

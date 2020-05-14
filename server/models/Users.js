@@ -15,5 +15,13 @@ module.exports = {
     },
     Get(userId) {
         return Users[userId]
+    },
+    filteredDataArray() {
+        return Users.name.filter((option) => {
+            return option
+                .toString()
+                .toLowerCase()
+                .indexOf(this.name.toLowerCase()) >= 0
+        })
     }
 };
